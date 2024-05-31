@@ -62,13 +62,13 @@
 </head>
 <body>
     <h2>Choose an option:</h2>
-    <button id="choice1">1</button>
-    <button id="choice2">2</button>
-    <button id="choice3">3</button>
-    <button id="choice4">4</button>
-    <button id="choice5">5</button>
-    <button id="choice6">6</button>
-    <button id="choice7">7</button>
+    <button id="choice1">course completion</button>
+    <button id="choice2">result</button>
+    <button id="choice3">current</button>
+    <button id="choice4">consolidated</button>
+    <button id="choice5">pro</button>
+    <button id="choice6">gen</button>
+    <button id="choice7">pstm</button>
     <form id="uploadForm" action="upload.php" method="post" enctype="multipart/form-data">
         <label for="document1" id="label1">Fees Payment Details:</label>
         <input type="file" name="document1" id="document1" accept=".pdf, .doc, .docx">
@@ -103,6 +103,7 @@
     <script>
         // Function to toggle visibility of sections based on choice
         function toggleSections(choice) {
+            console.log(choice)
             // Hide all sections and labels by default
             for (var i = 1; i <= 9; i++) {
                 document.getElementById('label' + i).style.display = 'none';
@@ -142,8 +143,6 @@
                     document.getElementById('document6').style.display = 'block';
                     document.getElementById('label5').style.display = 'block';
                     document.getElementById('document5').style.display = 'block';
-                    document.getElementById('label7').style.display = 'block';
-                    document.getElementById('document7').style.display = 'block';
                     break;
                 case '6':
                     document.getElementById('label8').style.display = 'block';
