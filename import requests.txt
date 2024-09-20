@@ -1,0 +1,23 @@
+import requests
+from bs4 import BeautifulSoup
+url='https://www.jagranjosh.com/general-knowledge/players-with-most-centuries-in-international-cricket-1573037608-1'
+cric=requests.get(url)
+soup=BeautifulSoup(cric.text,'html')
+print(soup)
+para=soup.find_all('p')
+print(para)
+paragraph_texts = [p.get_text() for p in para]
+print(paragraph_texts)
+header=soup.find_all('h1')
+print(header)
+header_texts=[h.get_text() for h in header]
+print(header_texts)
+table=soup.find('table')
+print(table)
+table_heading =table.find_all('td')
+print(table_heading)
+table_heading_texts=[td.text.strip() for td in table_heading]
+print(table_heading_texts)
+import pandas as pd
+df=pd.DataFrame(columns=table_heading_texts)
+df
